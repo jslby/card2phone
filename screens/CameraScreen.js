@@ -5,10 +5,7 @@ import { Container, Content } from 'native-base';
 
 export default class CameraScreen extends React.Component {
   static navigationOptions = {
-    header: {
-      left: null
-    }
-
+    title: 'Камера QR'
   };
   render() {
     return (
@@ -16,7 +13,7 @@ export default class CameraScreen extends React.Component {
         <Content>
           <Text>CameraScreen</Text>
         </Content>
-        <FooterTabs navigation={this.props.navigation}/>
+        <FooterTabs screen={this.constructor.name} navigation={this.props.navigation}/>
       </Container>
     );
   }

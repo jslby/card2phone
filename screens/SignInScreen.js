@@ -30,11 +30,11 @@ export default class SignInScreen extends React.Component {
   }
 
   componentDidMount = () => {
-    // AsyncStorage.getItem('showStart').then((value) => {
-    //   if(value == null){
-    //     this.props.navigation.navigate("Start");
-    //   }
-    // });
+    AsyncStorage.getItem('showStart').then((value) => {
+      if(value == null){
+        this.props.navigation.navigate("Start");
+      }
+    });
   }
 
   render() {
@@ -58,8 +58,8 @@ export default class SignInScreen extends React.Component {
           <Text style={styles.paragraph}>
             На указаный вами номер телефона придёт смс-сообщение с кодом подтверждения
           </Text>
-          </Content>
-        <FooterTabs navigation={this.props.navigation}/>
+        </Content>
+        <FooterTabs screen={this.constructor.name} navigation={this.props.navigation}/>
       </Container>
     );
   }
